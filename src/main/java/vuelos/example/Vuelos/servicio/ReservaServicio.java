@@ -1,4 +1,4 @@
 package vuelos.example.Vuelos.servicio;
 
-public class Reserva {
+public class ReservaServicio {
 }

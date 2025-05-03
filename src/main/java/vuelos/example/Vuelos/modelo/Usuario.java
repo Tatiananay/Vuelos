@@ -1,9 +1,6 @@
 package vuelos.example.Vuelos.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +13,19 @@ import lombok.ToString;
 @ToString
 
 public class Usuario {
+
+    public enum Rol{
+        ADMINISTRADOR,
+        USER
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuario;
     private String nombre;
     private String correo;
     private String password;
-    private String rol;
+
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
 
 }
