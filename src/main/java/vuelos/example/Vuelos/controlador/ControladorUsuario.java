@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vuelos.example.Vuelos.modelo.Usuario;
-import vuelos.example.Vuelos.repositorio.UsuarioRepositorio;
 import vuelos.example.Vuelos.servicio.IUsuarioServicio;
 
 import java.util.List;
@@ -16,11 +15,12 @@ import java.util.List;
 @RestController
 @RequestMapping("vuelo-app")
 @CrossOrigin("http://localhost:3000")
-public class Controlador {
+public class ControladorUsuario {
 
-    private static final Logger logger= LoggerFactory.getLogger(Controlador.class);
+    private static final Logger logger= LoggerFactory.getLogger(ControladorUsuario.class);
     @Autowired
     private IUsuarioServicio usuarioServicio;
+
     // Usuarios
 
     @GetMapping("/usuarios")
@@ -34,7 +34,7 @@ public class Controlador {
         return usuarioServicio.guardarUsuario(usuario);
     }
 
-    @GetMapping("/empleado/{id}")
+    @GetMapping("/usuarios/{id}")
     public ResponseEntity<Usuario> obtenerUsuario(@PathVariable Integer id) {
         Usuario usuario = usuarioServicio.obtenerUsuarioPorId(id);
         if (usuario == null) {
