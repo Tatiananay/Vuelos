@@ -27,6 +27,6 @@ public class Vuelo {
     private String destino;
     @JsonFormat(pattern = "HH:mm")
     private LocalTime horaSalida;
-    private String capacidad;
+    private Integer capacidadTotal;
     private String aerolinea;
 }

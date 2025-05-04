@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vuelos.example.Vuelos.excepcion.RecursoNoEncontradoExcepcion;
 import vuelos.example.Vuelos.modelo.Vuelo;
+import vuelos.example.Vuelos.modelo.VueloDTO;
 import vuelos.example.Vuelos.servicio.IVuelosServicio;
 
 import java.util.HashMap;
@@ -28,11 +29,11 @@ public class ControladorVuelo {
         return vuelos;
     }
 
-    @PostMapping("/vuelos")
-    public Vuelo guardarVuelo(@RequestBody Vuelo vuelo) {
-        logger.info(vuelo.toString());
-        return vuelosServicio.guardarVuelo(vuelo);
-    }
+//    @PostMapping("/vuelos")
+//    public Vuelo guardarVuelo(@RequestBody Vuelo vuelo) {
+//        logger.info(vuelo.toString());
+//        return vuelosServicio.guardarVuelo(vuelo);
+//    }
 
     @GetMapping("/vuelos/{id}")
     public ResponseEntity<Vuelo> obtenerVueloPorId(@PathVariable Integer id) {
@@ -52,10 +53,16 @@ public class ControladorVuelo {
         vuelo.setOrigen(vueloRecibido.getOrigen());
         vuelo.setDestino(vueloRecibido.getDestino());
         vuelo.setHoraSalida(vueloRecibido.getHoraSalida());
-        vuelo.setCapacidad(vueloRecibido.getCapacidad());
+        vuelo.setCapacidadTotal(vueloRecibido.getCapacidadTotal());
         vuelo.setAerolinea(vueloRecibido.getAerolinea());
         vuelosServicio.guardarVuelo(vuelo);
         return ResponseEntity.ok(vuelo);
+    }
+
+    @PostMapping("/vuelos")
+    public Vuelo guardarVuelo(@RequestBody VueloDTO vueloDTO) {
+        logger.info("Guardando vuelo con DTO");
+        return vuelosServicio.guardarVueloDesdeDTO(vueloDTO);
     }
 
     @DeleteMapping("/vuelos/{id}")
