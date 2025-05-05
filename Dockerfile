@@ -11,7 +11,7 @@ COPY .mvn .mvn
 RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
- FROM openjdk:21-jdk
+FROM openjdk:21-jdk
 VOLUME /tmp
 
 COPY --from=build /app/target/*.jar app.jar
