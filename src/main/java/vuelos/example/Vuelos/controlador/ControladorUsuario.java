@@ -47,9 +47,9 @@ public class ControladorUsuario {
     public ResponseEntity<Usuario> login(@RequestBody Usuario usuario) {
         String password = usuario.getPassword();
         String correo = usuario.getCorreo();
-        String nombre = usuario.getNombre();
+        //String nombre = usuario.getNombre();
 
-        Usuario usuario1 = usuarioServicio.Login(correo,password,nombre);
+        Usuario usuario1 = usuarioServicio.Login(correo,password);
         if (usuario1 == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }

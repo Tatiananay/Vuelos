@@ -10,6 +10,6 @@ public interface IPasajeServicio {
     public Pasaje guardarPasaje(Pasaje pasaje);
     void eliminarPasaje(Pasaje pasaje);
     public Pasaje obtenerPasajePorId(int id);
-    public List<Pasaje> listarPasajePorVuelo(Integer idVuelo);
+    //public List<Pasaje> listarPasajePorVuelo(Integer idVuelo);
 
 }

@@ -59,11 +59,11 @@ public class ControladorVuelo {
         return ResponseEntity.ok(vuelo);
     }
 
-    @PostMapping("/vuelos")
-    public Vuelo guardarVuelo(@RequestBody VueloDTO vueloDTO) {
-        logger.info("Guardando vuelo con DTO");
-        return vuelosServicio.guardarVueloDesdeDTO(vueloDTO);
-    }
+//    @PostMapping("/vuelos")
+//    public Vuelo guardarVuelo(@RequestBody VueloDTO vueloDTO) {
+//        logger.info("Guardando vuelo con DTO");
+//        return vuelosServicio.guardarVueloDesdeDTO(vueloDTO);
+//    }
 
     @DeleteMapping("/vuelos/{id}")
 

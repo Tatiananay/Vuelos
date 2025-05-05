@@ -28,8 +28,8 @@ public class PasajeServicio implements IPasajeServicio {
         return null;
     }
 
-    @Override
-    public List<Pasaje> listarPasajePorVuelo(Integer idVuelo) {
-        return pasajeRepositorio.findById_Vuelo(idVuelo);
-    }
+//    @Override
+//    public List<Pasaje> listarPasajePorVuelo(Integer idVuelo) {
+//        return pasajeRepositorio.findById_Vuelo(idVuelo);
+//    }
 }

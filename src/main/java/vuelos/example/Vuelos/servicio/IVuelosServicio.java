@@ -10,6 +10,6 @@ public interface IVuelosServicio {
     public Vuelo guardarVuelo(Vuelo vuelo);
     public void eliminarVuelo(Vuelo vuelo);
     public Vuelo obtenerVueloPorID(int id);
-    public Vuelo guardarVueloDesdeDTO(VueloDTO vueloDTO);
+    //public Vuelo guardarVueloDesdeDTO(VueloDTO vueloDTO);
 
 }

@@ -30,8 +30,8 @@ public class UsuarioServicio implements IUsuarioServicio{
     }
 
     @Override
-    public Usuario Login(String correo, String password, String nombre) {
-        return usuarioRepositorio.findByCorreoAndPasswordAndNombre(correo, password, nombre)
+    public Usuario Login(String correo, String password) {
+        return usuarioRepositorio.findByCorreoAndPassword(correo, password)
                 .orElseThrow(()-> new RuntimeException("Credenciales inválidas"));
     }
 

@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface PasajeRepositorio extends JpaRepository<Pasaje, Integer> {
-    List<Pasaje> findById_Vuelo(Integer idVuelo);
+    //List<Pasaje> findById_Vuelo(Integer idVuelo);
 
 }
